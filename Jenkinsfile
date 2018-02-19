@@ -4,7 +4,6 @@ pipeline {
     stage('Clone') {
       steps {
         sh 'echo \'shell scripts to build project...\''
-        deleteDir()
       }
     }
     stage('Build') {
