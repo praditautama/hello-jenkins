@@ -15,8 +15,8 @@ pipeline {
       parallel {
         stage('Integration') {
           steps {
-            sh '''echo \'shell scripts to run integration tests...\'
-error("Build failed because of this and that..")'''
+            sh 'echo \'shell scripts to run integration tests...\''
+            error '1'
           }
         }
         stage('Static') {
