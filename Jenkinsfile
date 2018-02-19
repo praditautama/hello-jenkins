@@ -1,4 +1,4 @@
-node {
+pipeline {
     // Clean workspace before doing anything
     deleteDir()
 
