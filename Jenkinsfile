@@ -11,26 +11,26 @@ pipeline {
         sh 'echo \'shell scripts to build project...\''
       }
     }
-    stage('Test') {
+    stage('Deploy To DevID') {
+      steps {
+        sh 'echo \'shell scripts to deploy...\''
+      }
+    }
+    stage('Functional Testing') {
       parallel {
-        stage('Integration') {
+        stage('Frontend') {
           steps {
-            sh 'echo \'shell scripts to run integration tests...\''
+            sh 'echo \'shell scripts to run frontend tests...\''
           }
         }
-        stage('Static') {
+        stage('Backend APIs') {
           steps {
-            sh 'echo \'shell scripts to run static tests...\''
-          }
-        }
-        stage('Unit') {
-          steps {
-            sh 'echo \'shell scripts to run unit tests...\''
+            sh 'echo \'shell scripts to run API tests...\''
           }
         }
       }
     }
-    stage('Deploy') {
+    stage('Deploy to Production') {
       steps {
         sh 'echo \'shell scripts to deploy...\''
       }
