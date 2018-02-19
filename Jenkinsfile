@@ -4,6 +4,7 @@ pipeline {
     stage('Clone') {
       steps {
         sh 'echo \'shell scripts to build project...\''
+        deleteDir()
       }
     }
     stage('Build') {
@@ -16,10 +17,6 @@ pipeline {
         stage('Integration') {
           steps {
             sh 'echo \'shell scripts to run integration tests...\''
-            catchError() {
-              error '1'
-            }
-            
           }
         }
         stage('Static') {
