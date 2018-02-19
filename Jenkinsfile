@@ -9,6 +9,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'echo \'shell scripts to build project...\''
+        archiveArtifacts '\'**/target/*.jar\''
       }
     }
     stage('Test') {
