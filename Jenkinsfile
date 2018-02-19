@@ -16,7 +16,10 @@ pipeline {
         stage('Integration') {
           steps {
             sh 'echo \'shell scripts to run integration tests...\''
-            error '1'
+            catchError() {
+              error '1'
+            }
+            
           }
         }
         stage('Static') {
