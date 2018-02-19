@@ -1,2 +1,2 @@
 # hello-jenkins
-CI CD With Jenkins Blue Ocean Dong
+CI CD With Jenkins Blue Ocean
